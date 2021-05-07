@@ -1,4 +1,3 @@
-//Lydia Yang
 import java.util.Random;
 
 public class MagicalEnemy extends Enemy implements Magical
@@ -42,11 +41,9 @@ public class MagicalEnemy extends Enemy implements Magical
   }
 
   /**
-    A random number is generated so that the magical spell can
-    deal damage to the hero at that value. This applies to 
-    magicMissile(), fireball(), and thunderclap().
-    @param: object of Entity 
-    @return: enemy's name and amount of damage the enemy dealt with magical spells.
+  Method of the magical enemy's magicMissile attack which does random damage in a range and applies that damage to the entity passed in.
+  @param: object of Entity
+  @return: a string indicating the attack and the damage they did to the entity with their attack
   */
   public String magicMissile(Entity e)
   {
@@ -55,13 +52,23 @@ public class MagicalEnemy extends Enemy implements Magical
     return " launches a Magic Missile at " + e.getName() + " doing " + "" + randDamage + " damage";
   }
 
+  /**
+  Method of the magical enemy's fireball attack which does random damage in a range and applies that damage to the entity passed in.
+  @param: object of Entity
+  @return: a string indicating the attack and the damage they did to the entity with their attack
+  */
   public String fireball(Entity e)
   {
     int randDamage = (int)(Math.random() * 8) + 1;
     e.takeDamage(randDamage);
-    return" launches a Fireball at " + e.getName() + " doing " + "" + randDamage + " damage";
+    return " launches a Fireball at " + e.getName() + " doing " + "" + randDamage + " damage";
   }
 
+  /**
+  Method of the magical enemy's thunderclap attack which does random damage in a range and applies that damage to the entity passed in.
+  @param: object of Entity
+  @return: a string indicating the attack and the damage they did to the entity with their attack
+  */
   public String thunderclap(Entity e)
   {
     int randDamage = (int)(Math.random() * 7) + 1;

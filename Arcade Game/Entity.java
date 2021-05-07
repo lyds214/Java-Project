@@ -1,52 +1,58 @@
-//Zach Brown
-public abstract class Entity{
+public abstract class Entity
+{
 	//Public variables
 	private String name;
 	private int maxHp;
 	private int hp;
 
 	/**
-    Constructor for Entity.
-    @param n: name of character's name.
-    @param mHp: maximum HP that a character can hold.
-  */
-	public Entity(String n, int mHp){
+	 * Constructor for Entity.
+	 * @param n: name of character's name.
+	 * @param mHp: maximum HP that a character can hold.
+	 */
+	public Entity(String n, int mHp)
+	{
 		name = n;
 		maxHp = mHp;
 		hp = maxHp;
 	}
 	public abstract String attack(Entity e);
 	
-/** 
- * The getName function returns the name of the entity it is being called with.
- * @return name of the entity
- */
-	public String getName(){
+	/**
+	 * The getName function returns the name of the entity it is being called with.
+	 * @return: name of the entity
+	 */
+	public String getName()
+	{
 		return name;
 	}
 
-/** 
- * The getHP function returns the hp of the entity it is being called with.
- * @return hp of the entity
- */
-	public int getHP(){
+	/**
+	 * The getHP function returns the hp of the entity it is being called with.
+	 * @return: hp of the entity
+	 */
+	public int getHP()
+	{
 		return hp;
 	}
 
-/** 
- * The getMaxHP function returns the max hp of the entity it is being called with.
- * @return max hp of the entity
- */
-	public int getMaxHP(){
+	/**
+	 * The getMaxHP function returns the max hp of the entity it is being called with.
+	 * @return: max hp of the entity
+	 */
+	public int getMaxHP()
+	{
 		return maxHp;
 	}
 
-/** 
- * The heal function takes in the parameter h and adds it to the hp of the entity it is being called for.
- * heal also checks if the hp is greater than the max hp and will set the hp to the max hp if it does surpass it.
- * @param int h the amount that is being healed to the entity.
- */
-	public void heal(int h){
+	/**
+	 * The heal function takes in the parameter h and adds it to the hp of the entity it is being called for.
+ 	   heal also checks if the hp is greater than the max hp and will set the hp to the max hp if it does surpass it.
+ 	 * @param int h the amount that is being healed to the entity.
+	 * @param h the amount that is being healed to the entity.
+	 */
+	public void heal(int h)
+	{
 		hp = hp + h;
 		if (hp > maxHp){
 			hp = maxHp;
@@ -60,9 +66,6 @@ public abstract class Entity{
  */
 	public void takeDamage(int d){
 		hp = hp - d;
-		if (hp < 0){
-			hp = 0;
-		}
 	}
 
 /** 

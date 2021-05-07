@@ -1,16 +1,15 @@
-//Lydia Yang
-
-public class Enemy extends Entity
+public abstract class Enemy extends Entity
 {
   /**
-  Contructor that creates an enemy using the Entity's contructor
-  @param n: name of the Enemy
-  @param mHP: maximum HP that enemy holds.
+    Contructor that creates an enemy using the Entity's contructor
+    @param n: name of the Enemy
+    @param mHP: maximum HP that enemy holds.
   */
   public Enemy(String n, int mHP)
   { 
     super(n, mHP);
   }
+
 
   /**
     A random value is generated for the enemy to attack hero.

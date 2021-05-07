@@ -1,4 +1,3 @@
-//Ethan Sandoval
 import java.io.*;
 import java.util.Scanner;
 public class Map{
@@ -6,16 +5,30 @@ public class Map{
   final int COL = 5;
   private char [][] map = new char[ROWS][COL];
   private boolean [][] revealed = new boolean[ROWS][COL];
+  private static Map instance = null;
   
   /**
   Contructor for Map class, fills the revealed array with false
   */
-  public Map(){
+   private Map(){
     for( int i = 0; i < revealed.length; i++ ){
       for(int j = 0; j < revealed[0].length; j++){
         revealed[i][j] = false;
       }
     }
+  }
+
+  /**
+   * Checks to see if there's a single instance of the class.
+   * @return returns null if instance is null.
+   */
+  public static Map getInstance()
+  {
+    if (instance == null)
+    {
+      instance = new Map();
+    }
+    return instance;
   }
 
   /**
@@ -49,6 +62,7 @@ public class Map{
         for (char[] char_array : dummy_map){
           for (char c: char_array){
             map[row][col] = c;
+            revealed[row][col] = false;
             col++;
           }
         }
@@ -135,8 +149,18 @@ public class Map{
     if (map[p.y][p.x] == 's'){
       map[p.y][p.x] = 's';
     }
+
+    else if (map[p.y][p.x] == 'm'){
+      map[p.y][p.x] = 'm';
+    }
+
+    else if(map[p.y][p.x] == 'i'){
+      map[p.y][p.x] = 'i';
+    }
+    
     else{
       map[p.y][p.x] = 'n';
     }
   }
+
 }
